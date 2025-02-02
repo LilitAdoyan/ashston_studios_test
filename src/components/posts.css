@@ -1,0 +1,43 @@
+.posts-wrapper{
+    text-align: -webkit-center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;    
+}
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  max-width: 1160px;
+  margin: 0 1.25rem;
+  justify-content: space-between;
+}
+
+.post-item {
+  flex: 1 1 calc(30% - 20px);
+  min-width: 280px;
+  cursor: pointer;
+}
+
+.post-item .post-img {
+  object-fit: cover;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+.post-author {
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .post-item {
+    flex: 1 1 calc(45% - 20px);
+  }
+  .posts-container{
+    justify-content: center;
+  }
+  .header-content{
+    max-width: 760px;
+  }
+}
+

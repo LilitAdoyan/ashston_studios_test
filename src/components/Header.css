@@ -1,0 +1,141 @@
+.App-header {
+  width: 100%;
+  background: white;
+}
+
+.header-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 0;
+  position: relative;
+}
+
+.mobile-menu-icon {
+  display: none;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+
+.search-container {
+  position: absolute;
+  right: 0;
+}
+
+.search-container input {
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-container img {
+  cursor: pointer;
+}
+
+.menu-wrapper {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.menu-wrapper.hide {
+  transform: translateY(-100%);
+}
+
+.menu-items {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-items-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0.9375rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.875rem;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+  padding: 0.9375rem 0;
+  font-weight: 500;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: white;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.625rem);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.menu-item:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu-item {
+  padding: 0.75rem 1.25rem;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.submenu-item:after {
+  content: '›';
+  margin-left: 0.625rem;
+  opacity: 0.5;
+}
+
+.submenu-item:hover {
+  margin-left: 8px;
+  color: #969696;
+}
+
+.submenu-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-icon {
+  width: 10px;
+  height: 10px;
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .menu-wrapper {
+    display: none;
+  }
+  
+  .mobile-menu-icon {
+    display: block;
+  }
+} 

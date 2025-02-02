@@ -1,0 +1,124 @@
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 400px;
+  height: 100%;
+  background-color: white;
+  padding: 3.75rem 1.875rem 1.875rem;
+  transition: left 0.3s ease-in-out;
+}
+
+.mobile-menu-overlay.open .mobile-menu {
+  left: 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  padding: 1.25rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.close-button:hover {
+  opacity: 0.7;
+}
+
+.mobile-menu-items {
+  margin-top: 1.875rem;
+}
+
+.mobile-menu-item {
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-item:first-child {
+    border-top: 1px solid #eee;
+}
+.mobile-menu-item img {
+    margin-left: 0.3125rem;
+}
+
+.mobile-menu-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9375rem 0;
+  cursor: pointer;
+}
+
+.mobile-menu-title img {
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-title img.rotated {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu-item:hover .mobile-submenu {
+  max-height: 500px; /* Adjust based on your content */
+}
+
+.mobile-menu-item:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.mobile-submenu-item {
+  padding: 0.75rem 1.25rem;
+  color: #666;
+}
+
+.mobile-submenu-item:last-child {
+  padding-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-overlay {
+    display: none;
+  }
+}
+
+.mobile-menu-logo {
+  display: block;
+  max-width: 150px;
+} 
